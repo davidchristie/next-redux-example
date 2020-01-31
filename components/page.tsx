@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { connect } from 'react-redux'
+import Link from "next/link";
+import { connect } from "react-redux";
 
-import Counter from './counter'
-import Clock from './clock'
+import Counter from "./counter";
+import Clock from "./clock";
 
 function Page({
   error,
@@ -11,7 +11,7 @@ function Page({
   linkTo,
   NavigateTo,
   placeholderData,
-  title,
+  title
 }) {
   return (
     <div>
@@ -28,9 +28,9 @@ function Page({
           <code>{JSON.stringify(placeholderData, null, 2)}</code>
         </pre>
       )}
-      {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+      {error && <p style={{ color: "red" }}>Error: {error.message}</p>}
     </div>
-  )
+  );
 }
 
-export default connect(state => state)(Page)
+export default connect(state => state)(Page);
