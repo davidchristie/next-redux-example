@@ -1,24 +1,24 @@
 import { NextPage } from "next";
 import React from "react";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
+import { useDispatch } from "react-redux";
 import Page from "../components/Page";
 import { loadData, startClock, tickClock } from "../actions";
 
-interface Props {
-  dispatch: Dispatch;
-}
+interface Props {}
 
 interface InitialProps {
   isServer: boolean;
 }
 
-const IndexPage: NextPage<Props, InitialProps> = ({ dispatch }) => {
+const IndexPage: NextPage<Props, InitialProps> = () => {
+  const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(startClock());
   }, []);
   return <Page title="Index Page" linkTo="/other" navigateTo="Other Page" />;
 };
+
+IndexPage.displayName = "IndexPage";
 
 // FIXME: Remove any type
 IndexPage.getInitialProps = async ({ ctx }: any) => {
@@ -30,4 +30,4 @@ IndexPage.getInitialProps = async ({ ctx }: any) => {
   return { isServer };
 };
 
-export default connect()(IndexPage);
+export default IndexPage;

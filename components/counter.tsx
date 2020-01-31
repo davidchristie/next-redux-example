@@ -1,14 +1,11 @@
 import React from "react";
-import { Dispatch } from "redux";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { increment, decrement, reset } from "../actions";
+import { RootState } from "../reducer";
 
-interface Props {
-  count: number;
-  dispatch: Dispatch;
-}
-
-const Counter: React.FunctionComponent<Props> = ({ count, dispatch }) => {
+const Counter: React.FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const count = useSelector<RootState>(state => state.count);
   const onIncrementClick = () => dispatch(increment());
   const onDecrementClick = () => dispatch(decrement());
   const onResetClick = () => dispatch(reset());
@@ -29,6 +26,6 @@ const Counter: React.FunctionComponent<Props> = ({ count, dispatch }) => {
   );
 };
 
-const mapStateToProps = ({ count }) => ({ count });
+Counter.displayName = "Counter";
 
-export default connect(mapStateToProps)(Counter);
+export default Counter;

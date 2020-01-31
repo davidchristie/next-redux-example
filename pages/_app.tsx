@@ -1,10 +1,9 @@
 import App from "next/app";
-import React from "react";
-import { Store } from "redux";
-import { Provider } from "react-redux";
-import withRedux from "next-redux-wrapper";
 import withReduxSaga from "next-redux-saga";
-
+import withRedux from "next-redux-wrapper";
+import React from "react";
+import { Provider } from "react-redux";
+import { Store } from "redux";
 import createStore from "../store";
 
 interface Props {
@@ -14,11 +13,9 @@ interface Props {
 class MyApp extends App<Props> {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
-
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps({ ctx });
     }
-
     return { pageProps };
   }
 

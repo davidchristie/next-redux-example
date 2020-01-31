@@ -47,6 +47,10 @@ export const describeComponent = <P extends unknown>(
       context = renderConnectedComponent(<Component {...props} />);
     });
 
+    it("Has display name", () => {
+      expect(Component.displayName).toBeDefined();
+    });
+
     fn(() => context);
   });
 };

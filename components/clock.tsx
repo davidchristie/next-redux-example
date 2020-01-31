@@ -34,4 +34,6 @@ const Clock: React.FunctionComponent<Props> = ({ lastUpdate, light }) => {
   );
 };
 
+Clock.displayName = "Clock";
+
 export default Clock;

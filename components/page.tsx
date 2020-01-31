@@ -1,25 +1,25 @@
 import Link from "next/link";
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import Clock from "./Clock";
 import Counter from "./Counter";
 import { RootState } from "reducer";
 
-interface Props extends RootState {
+interface Props {
   linkTo: string;
   navigateTo: string;
   title: string;
 }
 
 const Page: React.FunctionComponent<Props> = ({
-  error,
-  lastUpdate,
-  light,
   linkTo,
   navigateTo,
-  placeholderData,
   title
 }) => {
+  const { error, lastUpdate, light, placeholderData } = useSelector<
+    RootState,
+    RootState
+  >(state => state);
   return (
     <div>
       <h1>{title}</h1>
@@ -40,4 +40,6 @@ const Page: React.FunctionComponent<Props> = ({
   );
 };
 
-export default connect(state => state)(Page);
+Page.displayName = "Page";
+
+export default Page;
