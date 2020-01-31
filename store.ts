@@ -1,10 +1,10 @@
-import { Action, applyMiddleware, createStore } from "redux";
+import { Action, applyMiddleware, createStore, Middleware } from "redux";
 import createSagaMiddleware, { Task } from "redux-saga";
 
 import rootReducer, { exampleInitialState, RootState } from "./reducer";
 import rootSaga from "./saga";
 
-const bindMiddleware = middleware => {
+const bindMiddleware = (middleware: Middleware[]) => {
   if (process.env.NODE_ENV !== "production") {
     const { composeWithDevTools } = require("redux-devtools-extension");
     return composeWithDevTools(applyMiddleware(...middleware));

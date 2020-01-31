@@ -8,7 +8,7 @@ type Context = ReturnType<typeof renderConnectedComponent>;
 
 type GetContext = () => Context;
 
-const createWrapper = initialState => {
+const createWrapper = (initialState: RootState) => {
   const reducer = (state = initialState) => state;
   const store = createStore(reducer);
   const dispatch = mockDispatch(store);
@@ -35,7 +35,7 @@ const renderConnectedComponent = (
   return { dispatch, result };
 };
 
-export const describeComponent = <P extends unknown>(
+export const describeComponent = <P extends {}>(
   Component: React.ComponentType<P>,
   props: P,
   fn: (getContext: GetContext) => void
@@ -55,7 +55,7 @@ export const describeComponent = <P extends unknown>(
   });
 };
 
-export const describeComponentWithReduxState = <P extends unknown>(
+export const describeComponentWithReduxState = <P extends {}>(
   Component: React.ComponentType<P>,
   props: P,
   state: Partial<RootState>,

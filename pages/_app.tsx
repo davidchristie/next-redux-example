@@ -1,4 +1,4 @@
-import App from "next/app";
+import App, { AppContext } from "next/app";
 import withReduxSaga from "next-redux-saga";
 import withRedux from "next-redux-wrapper";
 import React from "react";
@@ -11,10 +11,11 @@ interface Props {
 }
 
 class MyApp extends App<Props> {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx }: AppContext) {
     let pageProps = {};
     if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps({ ctx });
+      // FIXME: Remove any type.
+      pageProps = await Component.getInitialProps({ ctx } as any);
     }
     return { pageProps };
   }

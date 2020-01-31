@@ -5,7 +5,7 @@ import { RootState } from "../reducer";
 
 const Counter: React.FunctionComponent = () => {
   const dispatch = useDispatch();
-  const count = useSelector<RootState>(state => state.count);
+  const count = useSelector<RootState, number>(state => state.count);
   const onIncrementClick = () => dispatch(increment());
   const onDecrementClick = () => dispatch(decrement());
   const onResetClick = () => dispatch(reset());

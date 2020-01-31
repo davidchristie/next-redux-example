@@ -9,7 +9,7 @@ export const actionTypes = {
   TICK_CLOCK: "TICK_CLOCK"
 };
 
-export function failure(error) {
+export function failure(error: Error) {
   return {
     type: actionTypes.FAILURE,
     error
@@ -32,7 +32,8 @@ export function loadData() {
   return { type: actionTypes.LOAD_DATA };
 }
 
-export function loadDataSuccess(data) {
+// FIXME: Remove any type.
+export function loadDataSuccess(data: any) {
   return {
     type: actionTypes.LOAD_DATA_SUCCESS,
     data
@@ -43,7 +44,7 @@ export function startClock() {
   return { type: actionTypes.START_CLOCK };
 }
 
-export function tickClock(isServer) {
+export function tickClock(isServer: boolean) {
   return {
     type: actionTypes.TICK_CLOCK,
     light: !isServer,

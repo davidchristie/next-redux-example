@@ -16,7 +16,8 @@ export const exampleInitialState: RootState = {
   placeholderData: null
 };
 
-function reducer(state: RootState = exampleInitialState, action) {
+// FIXME: Remove any type.
+function reducer(state: RootState = exampleInitialState, action: any) {
   switch (action.type) {
     case actionTypes.FAILURE:
       return {

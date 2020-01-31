@@ -5,9 +5,9 @@ interface Props {
   light: boolean;
 }
 
-const pad = n => (n < 10 ? `0${n}` : n);
+const pad = (n: number) => (n < 10 ? `0${n}` : n);
 
-const format = t => {
+const format = (t: Date) => {
   const hours = t.getUTCHours();
   const minutes = t.getUTCMinutes();
   const seconds = t.getUTCSeconds();
