@@ -1,28 +1,30 @@
+import { NextPage } from "next";
 import React from "react";
-import { Dispatch } from "redux";
 import { connect } from "react-redux";
-
-import { startClock, tickClock } from "../actions";
+import { Dispatch } from "redux";
 import Page from "../components/Page";
+import { startClock, tickClock } from "../actions";
 
 interface Props {
   dispatch: Dispatch;
 }
 
-class OtherPage extends React.Component<Props> {
-  static async getInitialProps(props) {
-    const { store, isServer } = props.ctx;
-    store.dispatch(tickClock(isServer));
-    return { isServer };
-  }
-
-  componentDidMount() {
-    this.props.dispatch(startClock());
-  }
-
-  render() {
-    return <Page title="Other Page" linkTo="/" navigateTo="Index Page" />;
-  }
+interface InitialProps {
+  isServer: boolean;
 }
+
+const OtherPage: NextPage<Props, InitialProps> = ({ dispatch }) => {
+  React.useEffect(() => {
+    dispatch(startClock());
+  }, []);
+  return <Page title="Other Page" linkTo="/" navigateTo="Index Page" />;
+};
+
+// FIXME: Remove any type.
+OtherPage.getInitialProps = async ({ ctx }: any) => {
+  const { store, isServer } = ctx;
+  store.dispatch(tickClock(isServer));
+  return { isServer };
+};
 
 export default connect()(OtherPage);

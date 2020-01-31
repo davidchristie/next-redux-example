@@ -1,5 +1,10 @@
 import React from "react";
 
+interface Props {
+  lastUpdate: number;
+  light: boolean;
+}
+
 const pad = n => (n < 10 ? `0${n}` : n);
 
 const format = t => {
@@ -9,7 +14,7 @@ const format = t => {
   return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 };
 
-function Clock({ lastUpdate, light }) {
+const Clock: React.FunctionComponent<Props> = ({ lastUpdate, light }) => {
   return (
     <div className={light ? "light" : ""}>
       {format(new Date(lastUpdate))}
@@ -27,6 +32,6 @@ function Clock({ lastUpdate, light }) {
       `}</style>
     </div>
   );
-}
+};
 
 export default Clock;

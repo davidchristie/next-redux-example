@@ -1,33 +1,33 @@
+import { NextPage } from "next";
 import React from "react";
-import { Dispatch } from "redux";
 import { connect } from "react-redux";
-
-import { loadData, startClock, tickClock } from "../actions";
+import { Dispatch } from "redux";
 import Page from "../components/Page";
+import { loadData, startClock, tickClock } from "../actions";
 
 interface Props {
   dispatch: Dispatch;
 }
 
-class IndexPage extends React.Component<Props> {
-  static async getInitialProps(props) {
-    const { store, isServer } = props.ctx;
-    store.dispatch(tickClock(isServer));
-
-    if (!store.getState().placeholderData) {
-      store.dispatch(loadData());
-    }
-
-    return { isServer };
-  }
-
-  componentDidMount() {
-    this.props.dispatch(startClock());
-  }
-
-  render() {
-    return <Page title="Index Page" linkTo="/other" navigateTo="Other Page" />;
-  }
+interface InitialProps {
+  isServer: boolean;
 }
+
+const IndexPage: NextPage<Props, InitialProps> = ({ dispatch }) => {
+  React.useEffect(() => {
+    dispatch(startClock());
+  }, []);
+  return <Page title="Index Page" linkTo="/other" navigateTo="Other Page" />;
+};
+
+// FIXME: Remove any type
+IndexPage.getInitialProps = async ({ ctx }: any) => {
+  const { store, isServer } = ctx;
+  store.dispatch(tickClock(isServer));
+  if (!store.getState().placeholderData) {
+    store.dispatch(loadData());
+  }
+  return { isServer };
+};
 
 export default connect()(IndexPage);

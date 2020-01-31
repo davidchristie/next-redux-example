@@ -3,37 +3,39 @@
 exports[`With test link Connect(Page) Component Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <h1 />
+    <h1>
+      Test Title
+    </h1>
     <div
       class="jsx-1453841751 "
     >
       00:00:00
     </div>
     <div
-      class="jsx-2435724200"
+      class="jsx-1118913787"
     >
       <h1
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         Count: 
         <span
-          class="jsx-2435724200"
+          class="jsx-1118913787"
         >
           0
         </span>
       </h1>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         +1
       </button>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         -1
       </button>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         Reset
       </button>
@@ -52,37 +54,39 @@ exports[`With test link Connect(Page) Component Should match snapshot 1`] = `
 exports[`With test link Connect(Page) with Redux state: {"error":{}} Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <h1 />
+    <h1>
+      Test Title
+    </h1>
     <div
       class="jsx-1453841751 "
     >
       00:00:00
     </div>
     <div
-      class="jsx-2435724200"
+      class="jsx-1118913787"
     >
       <h1
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         Count: 
         <span
-          class="jsx-2435724200"
+          class="jsx-1118913787"
         >
           0
         </span>
       </h1>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         +1
       </button>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         -1
       </button>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         Reset
       </button>
@@ -106,37 +110,39 @@ exports[`With test link Connect(Page) with Redux state: {"error":{}} Should matc
 exports[`With test link Connect(Page) with Redux state: {"placeholderData":[{"id":1},{"id":2},{"id":3}]} Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <h1 />
+    <h1>
+      Test Title
+    </h1>
     <div
       class="jsx-1453841751 "
     >
       00:00:00
     </div>
     <div
-      class="jsx-2435724200"
+      class="jsx-1118913787"
     >
       <h1
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         Count: 
         <span
-          class="jsx-2435724200"
+          class="jsx-1118913787"
         >
           0
         </span>
       </h1>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         +1
       </button>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         -1
       </button>
       <button
-        class="jsx-2435724200"
+        class="jsx-1118913787"
       >
         Reset
       </button>

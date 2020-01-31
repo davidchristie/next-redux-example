@@ -1,10 +1,17 @@
 import Link from "next/link";
+import React from "react";
 import { connect } from "react-redux";
-
-import Counter from "./Counter";
 import Clock from "./Clock";
+import Counter from "./Counter";
+import { RootState } from "reducer";
 
-function Page({
+interface Props extends RootState {
+  linkTo: string;
+  navigateTo: string;
+  title: string;
+}
+
+const Page: React.FunctionComponent<Props> = ({
   error,
   lastUpdate,
   light,
@@ -12,7 +19,7 @@ function Page({
   navigateTo,
   placeholderData,
   title
-}) {
+}) => {
   return (
     <div>
       <h1>{title}</h1>
@@ -31,6 +38,6 @@ function Page({
       {error && <p style={{ color: "red" }}>Error: {error.message}</p>}
     </div>
   );
-}
+};
 
 export default connect(state => state)(Page);
