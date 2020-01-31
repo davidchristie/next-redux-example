@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index page With React Testing Library Snapshot Should match Snapshot 1`] = `
+exports[`Connect(IndexPage) Component Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
     <h1>

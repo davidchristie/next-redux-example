@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { connect } from "react-redux";
 
-import Counter from "./counter";
-import Clock from "./clock";
+import Counter from "./Counter";
+import Clock from "./Clock";
 
 function Page({
   error,
   lastUpdate,
   light,
   linkTo,
-  NavigateTo,
+  navigateTo,
   placeholderData,
   title
 }) {
@@ -20,7 +20,7 @@ function Page({
       <Counter />
       <nav>
         <Link href={linkTo}>
-          <a>Navigate: {NavigateTo}</a>
+          <a>Navigate: {navigateTo}</a>
         </Link>
       </nav>
       {placeholderData && (

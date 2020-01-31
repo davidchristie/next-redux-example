@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With test link Connect(Page) Component Should match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1 />
+    <div
+      class="jsx-1453841751 "
+    >
+      00:00:00
+    </div>
+    <div
+      class="jsx-2435724200"
+    >
+      <h1
+        class="jsx-2435724200"
+      >
+        Count: 
+        <span
+          class="jsx-2435724200"
+        >
+          0
+        </span>
+      </h1>
+      <button
+        class="jsx-2435724200"
+      >
+        +1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        -1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        Reset
+      </button>
+    </div>
+    <nav>
+      <a
+        href="/test/link"
+      >
+        Navigate: Test Link
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`With test link Connect(Page) with Redux state: {"error":{}} Should match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1 />
+    <div
+      class="jsx-1453841751 "
+    >
+      00:00:00
+    </div>
+    <div
+      class="jsx-2435724200"
+    >
+      <h1
+        class="jsx-2435724200"
+      >
+        Count: 
+        <span
+          class="jsx-2435724200"
+        >
+          0
+        </span>
+      </h1>
+      <button
+        class="jsx-2435724200"
+      >
+        +1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        -1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        Reset
+      </button>
+    </div>
+    <nav>
+      <a
+        href="/test/link"
+      >
+        Navigate: Test Link
+      </a>
+    </nav>
+    <p
+      style="color: red;"
+    >
+      Error: Test error message.
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`With test link Connect(Page) with Redux state: {"placeholderData":[{"id":1},{"id":2},{"id":3}]} Should match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1 />
+    <div
+      class="jsx-1453841751 "
+    >
+      00:00:00
+    </div>
+    <div
+      class="jsx-2435724200"
+    >
+      <h1
+        class="jsx-2435724200"
+      >
+        Count: 
+        <span
+          class="jsx-2435724200"
+        >
+          0
+        </span>
+      </h1>
+      <button
+        class="jsx-2435724200"
+      >
+        +1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        -1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        Reset
+      </button>
+    </div>
+    <nav>
+      <a
+        href="/test/link"
+      >
+        Navigate: Test Link
+      </a>
+    </nav>
+    <pre>
+      <code>
+        [
+  {
+    "id": 1
+  },
+  {
+    "id": 2
+  },
+  {
+    "id": 3
+  }
+]
+      </code>
+    </pre>
+  </div>
+</DocumentFragment>
+`;

@@ -2,7 +2,7 @@ import { actionTypes } from "./actions";
 
 export interface RootState {
   count: number;
-  error: boolean;
+  error: Error | undefined;
   lastUpdate: number;
   light: boolean;
   placeholderData: any | null;
@@ -10,7 +10,7 @@ export interface RootState {
 
 export const exampleInitialState: RootState = {
   count: 0,
-  error: false,
+  error: undefined,
   lastUpdate: 0,
   light: false,
   placeholderData: null

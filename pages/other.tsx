@@ -3,13 +3,13 @@ import { Dispatch } from "redux";
 import { connect } from "react-redux";
 
 import { startClock, tickClock } from "../actions";
-import Page from "../components/page";
+import Page from "../components/Page";
 
 interface Props {
   dispatch: Dispatch;
 }
 
-class Other extends React.Component<Props> {
+class OtherPage extends React.Component<Props> {
   static async getInitialProps(props) {
     const { store, isServer } = props.ctx;
     store.dispatch(tickClock(isServer));
@@ -21,8 +21,8 @@ class Other extends React.Component<Props> {
   }
 
   render() {
-    return <Page title="Other Page" linkTo="/" NavigateTo="Index Page" />;
+    return <Page title="Other Page" linkTo="/" navigateTo="Index Page" />;
   }
 }
 
-export default connect()(Other);
+export default connect()(OtherPage);

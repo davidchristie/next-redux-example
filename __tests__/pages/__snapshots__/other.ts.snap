@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Connect(OtherPage) Component Should match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Other Page
+    </h1>
+    <div
+      class="jsx-1453841751 "
+    >
+      00:00:00
+    </div>
+    <div
+      class="jsx-2435724200"
+    >
+      <h1
+        class="jsx-2435724200"
+      >
+        Count: 
+        <span
+          class="jsx-2435724200"
+        >
+          0
+        </span>
+      </h1>
+      <button
+        class="jsx-2435724200"
+      >
+        +1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        -1
+      </button>
+      <button
+        class="jsx-2435724200"
+      >
+        Reset
+      </button>
+    </div>
+    <nav>
+      <a
+        href="/"
+      >
+        Navigate: Index Page
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;

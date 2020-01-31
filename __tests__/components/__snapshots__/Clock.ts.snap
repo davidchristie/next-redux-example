@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`At 18:05:31 Light undefined Component Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="jsx-1453841751 light"
+  >
+    18:05:31
+  </div>
+</DocumentFragment>
+`;
+
+exports[`At 18:05:31 undefined Component Should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="jsx-1453841751 "
+  >
+    18:05:31
+  </div>
+</DocumentFragment>
+`;
