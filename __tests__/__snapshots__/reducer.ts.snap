@@ -4,7 +4,6 @@ exports[`Root Reducer Initial state Should match snapshot 1`] = `
 Object {
   "count": 0,
   "error": undefined,
-  "isServer": false,
   "lastUpdate": 0,
   "light": false,
   "placeholderData": null,

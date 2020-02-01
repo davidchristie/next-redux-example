@@ -1,5 +1,6 @@
 import { Store } from "redux";
 import { actionTypes, loadData, startClock } from "../actions";
+import isServer, { setServer } from "../isServer";
 import { RootState, exampleInitialState } from "../reducer";
 import { createReduxStore } from "../store";
 import { describeAllEnvironments, itShouldHaveMethod } from "../test-utils";
@@ -42,9 +43,9 @@ describe("Sagas", () => {
       expect(store.getState().placeholderData).toBe(placeholderData);
     });
 
-    describe("On the server from remote service", () => {
+    describe("On Server", () => {
       beforeEach(() => {
-        store = createReduxStore({ isServer: true });
+        setServer(true);
         store.dispatch(loadData());
       });
 

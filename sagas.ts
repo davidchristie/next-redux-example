@@ -1,16 +1,9 @@
 import es6promise from "es6-promise";
 import "isomorphic-unfetch";
-import {
-  all,
-  call,
-  delay,
-  put,
-  select,
-  take,
-  takeLatest
-} from "redux-saga/effects";
+import { all, call, delay, put, take, takeLatest } from "redux-saga/effects";
 import { getUsers } from "./pages/api/users";
 import { actionTypes, failure, loadDataSuccess, tickClock } from "./actions";
+import isServer from "./isServer";
 
 es6promise.polyfill();
 
@@ -30,8 +23,7 @@ function* runClockSaga() {
 
 function* loadDataSaga() {
   try {
-    const isServer = yield select(state => state.isServer);
-    const data = yield isServer ? yield getUsers() : fetchData("/api/users");
+    const data = yield isServer() ? yield getUsers() : fetchData("/api/users");
     yield put(loadDataSuccess(data));
   } catch (err) {
     yield put(failure(err));
