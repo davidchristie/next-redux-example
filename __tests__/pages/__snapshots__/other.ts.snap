@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`OtherPage Component Initial Props Should match snapshot 1`] = `
+Object {
+  "isServer": false,
+}
+`;
+
 exports[`OtherPage Component Should match snapshot 1`] = `
 <DocumentFragment>
   <div>

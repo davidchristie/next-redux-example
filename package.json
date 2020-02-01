@@ -27,14 +27,22 @@
     "typescript": "^3.7.5",
     "wait-for-expect": "^3.0.1"
   },
-  "license": "ISC",
   "jest": {
     "collectCoverageFrom": [
       "**/*.{js,jsx,ts,tsx}",
       "!coverage/**",
       "!node_modules/**"
-    ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
+  "license": "ISC",
   "name": "next-redux-example",
   "scripts": {
     "build": "next build",

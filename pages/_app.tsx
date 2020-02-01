@@ -1,4 +1,4 @@
-import App, { AppContext } from "next/app";
+import AppComponent, { AppContext } from "next/app";
 import withReduxSaga from "next-redux-saga";
 import withRedux from "next-redux-wrapper";
 import React from "react";
@@ -10,7 +10,7 @@ interface Props {
   store: Store;
 }
 
-class MyApp extends App<Props> {
+export class AppContent extends AppComponent<Props> {
   static async getInitialProps({ Component, ctx }: AppContext) {
     let pageProps = {};
     if (Component.getInitialProps) {
@@ -30,4 +30,8 @@ class MyApp extends App<Props> {
   }
 }
 
-export default withRedux(createReduxStore)(withReduxSaga(MyApp));
+const App = withRedux(createReduxStore)(withReduxSaga(AppContent));
+
+App.displayName = "App";
+
+export default App;
