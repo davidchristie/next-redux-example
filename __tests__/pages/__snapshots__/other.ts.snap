@@ -9,6 +9,13 @@ Object {
 exports[`OtherPage Component Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
+    <header>
+      <a
+        href="https://github.com/davidchristie/next-redux-example"
+      >
+        GitHub
+      </a>
+    </header>
     <h1>
       Other Page
     </h1>

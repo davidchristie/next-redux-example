@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "../reducer";
 import Clock from "./Clock";
 import Counter from "./Counter";
-import { RootState } from "reducer";
+import GitHubLink from "./GitHubLink";
 
 interface Props {
   linkTo: string;
@@ -22,6 +23,9 @@ const Page: React.FunctionComponent<Props> = ({
   >(state => state);
   return (
     <div>
+      <header>
+        <GitHubLink />
+      </header>
       <h1>{title}</h1>
       <Clock lastUpdate={lastUpdate} light={light} />
       <Counter />

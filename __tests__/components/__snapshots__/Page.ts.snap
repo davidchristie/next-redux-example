@@ -3,6 +3,13 @@
 exports[`With test link Page Component Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
+    <header>
+      <a
+        href="https://github.com/davidchristie/next-redux-example"
+      >
+        GitHub
+      </a>
+    </header>
     <h1>
       Test Title
     </h1>
@@ -54,6 +61,13 @@ exports[`With test link Page Component Should match snapshot 1`] = `
 exports[`With test link Page with Redux state: {"error":{}} Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
+    <header>
+      <a
+        href="https://github.com/davidchristie/next-redux-example"
+      >
+        GitHub
+      </a>
+    </header>
     <h1>
       Test Title
     </h1>
@@ -110,6 +124,13 @@ exports[`With test link Page with Redux state: {"error":{}} Should match snapsho
 exports[`With test link Page with Redux state: {"placeholderData":[{"id":1},{"id":2},{"id":3}]} Should match snapshot 1`] = `
 <DocumentFragment>
   <div>
+    <header>
+      <a
+        href="https://github.com/davidchristie/next-redux-example"
+      >
+        GitHub
+      </a>
+    </header>
     <h1>
       Test Title
     </h1>
