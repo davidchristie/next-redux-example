@@ -36,12 +36,25 @@ describe("Sagas", () => {
       store.dispatch(loadData());
     });
 
-    it("Should fetch the data", async () => {
+    it("Should fetch data from the API", () => {
       expect(window.fetch).toHaveBeenCalledTimes(1);
-      expect(window.fetch).toHaveBeenCalledWith(
-        "https://jsonplaceholder.typicode.com/users"
-      );
+      expect(window.fetch).toHaveBeenCalledWith("/api/users", undefined);
       expect(store.getState().placeholderData).toBe(placeholderData);
+    });
+
+    describe("On the server from remote service", () => {
+      beforeEach(() => {
+        store = createReduxStore({ isServer: true });
+        store.dispatch(loadData());
+      });
+
+      it("Should fetch data from remote service", async () => {
+        expect(window.fetch).toHaveBeenCalledWith(
+          "https://jsonplaceholder.typicode.com/users"
+        );
+        await new Promise(setImmediate);
+        expect(store.getState().placeholderData).toBe(placeholderData);
+      });
     });
 
     describe("If the request fails", () => {

@@ -3,6 +3,10 @@ import createSagaMiddleware, { Task } from "redux-saga";
 import rootReducer, { exampleInitialState, RootState } from "./reducer";
 import { rootSaga } from "./sagas";
 
+const isServer = () => {
+  return typeof window === "undefined";
+};
+
 const bindMiddleware = (middleware: Middleware[]) => {
   if (process.env.NODE_ENV !== "production") {
     const { composeWithDevTools } = require("redux-devtools-extension");
@@ -11,16 +15,19 @@ const bindMiddleware = (middleware: Middleware[]) => {
   return applyMiddleware(...middleware);
 };
 
-export const createReduxStore = (
-  initialState: RootState = exampleInitialState
-) => {
+export const createReduxStore = (initialState: Partial<RootState> = {}) => {
+  const preloadedState = {
+    ...exampleInitialState,
+    isServer: isServer(),
+    ...initialState
+  };
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore<
     RootState,
     Action<unknown>,
     { sagaTask: Task },
     unknown
-  >(rootReducer, initialState, bindMiddleware([sagaMiddleware]));
+  >(rootReducer, preloadedState, bindMiddleware([sagaMiddleware]));
   store.sagaTask = sagaMiddleware.run(rootSaga);
   return store;
 };

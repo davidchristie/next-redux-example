@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
+exports[`IndexPage Component Initial Props If data has already been loaded Should match snapshot 1`] = `
 Object {
   "isServer": false,
 }

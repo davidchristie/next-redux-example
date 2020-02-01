@@ -7,6 +7,7 @@ export interface RootState {
   lastUpdate: number;
   light: boolean;
   placeholderData: any | null;
+  isServer: boolean;
 }
 
 export const exampleInitialState: RootState = {
@@ -14,7 +15,8 @@ export const exampleInitialState: RootState = {
   error: undefined,
   lastUpdate: 0,
   light: false,
-  placeholderData: null
+  placeholderData: null,
+  isServer: false
 };
 
 function reducer(state: RootState = exampleInitialState, action: AnyAction) {

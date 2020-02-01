@@ -2,10 +2,7 @@ import { AppProps } from "next/app";
 import { Router } from "next/dist/client/router";
 import App, { AppContent } from "../../pages/_app";
 import { describeComponent, itShouldMatchSnapshot } from "../../test-utils";
-import {
-  AppContextType,
-  NextComponentType
-} from "next/dist/next-server/lib/utils";
+import { NextComponentType } from "next/dist/next-server/lib/utils";
 
 describeComponent<AppProps>(
   App,
