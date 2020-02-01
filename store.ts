@@ -1,6 +1,5 @@
 import { Action, applyMiddleware, createStore, Middleware } from "redux";
 import createSagaMiddleware, { Task } from "redux-saga";
-
 import rootReducer, { exampleInitialState, RootState } from "./reducer";
 import rootSaga from "./saga";
 
@@ -12,7 +11,9 @@ const bindMiddleware = (middleware: Middleware[]) => {
   return applyMiddleware(...middleware);
 };
 
-function configureStore(initialState = exampleInitialState) {
+export const createReduxStore = (
+  initialState: RootState = exampleInitialState
+) => {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore<
     RootState,
@@ -20,10 +21,6 @@ function configureStore(initialState = exampleInitialState) {
     { sagaTask: Task },
     unknown
   >(rootReducer, initialState, bindMiddleware([sagaMiddleware]));
-
   store.sagaTask = sagaMiddleware.run(rootSaga);
-
   return store;
-}
-
-export default configureStore;
+};

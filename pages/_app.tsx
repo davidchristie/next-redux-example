@@ -4,7 +4,7 @@ import withRedux from "next-redux-wrapper";
 import React from "react";
 import { Provider } from "react-redux";
 import { Store } from "redux";
-import createStore from "../store";
+import { createReduxStore } from "../store";
 
 interface Props {
   store: Store;
@@ -30,4 +30,4 @@ class MyApp extends App<Props> {
   }
 }
 
-export default withRedux(createStore)(withReduxSaga(MyApp));
+export default withRedux(createReduxStore)(withReduxSaga(MyApp));
