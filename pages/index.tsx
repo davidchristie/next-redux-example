@@ -23,7 +23,7 @@ IndexPage.displayName = "IndexPage";
 // FIXME: Remove any type
 IndexPage.getInitialProps = async ({ ctx }: any) => {
   const { store, isServer } = ctx;
-  store.dispatch(tickClock(isServer));
+  store.dispatch(tickClock(Date.now(), isServer));
   if (!store.getState().placeholderData) {
     store.dispatch(loadData());
   }

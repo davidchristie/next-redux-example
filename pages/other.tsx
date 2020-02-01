@@ -23,7 +23,7 @@ OtherPage.displayName = "OtherPage";
 // FIXME: Remove any type.
 OtherPage.getInitialProps = async ({ ctx }: any) => {
   const { store, isServer } = ctx;
-  store.dispatch(tickClock(isServer));
+  store.dispatch(tickClock(Date.now(), isServer));
   return { isServer };
 };
 

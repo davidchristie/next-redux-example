@@ -11,7 +11,7 @@ es6promise.polyfill();
 function* runClockSaga() {
   yield take(actionTypes.START_CLOCK);
   while (true) {
-    yield put(tickClock(false));
+    yield put(tickClock(Date.now(), false));
     yield delay(1000);
   }
 }

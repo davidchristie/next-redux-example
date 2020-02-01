@@ -1,3 +1,4 @@
+import { AnyAction } from "redux";
 import { actionTypes } from "./actions";
 
 export interface RootState {
@@ -16,8 +17,7 @@ export const exampleInitialState: RootState = {
   placeholderData: null
 };
 
-// FIXME: Remove any type.
-function reducer(state: RootState = exampleInitialState, action: any) {
+function reducer(state: RootState = exampleInitialState, action: AnyAction) {
   switch (action.type) {
     case actionTypes.FAILURE:
       return {
@@ -52,7 +52,7 @@ function reducer(state: RootState = exampleInitialState, action: any) {
     case actionTypes.TICK_CLOCK:
       return {
         ...state,
-        ...{ lastUpdate: action.ts, light: !!action.light }
+        ...{ lastUpdate: action.timestamp, light: !!action.light }
       };
 
     default:

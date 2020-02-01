@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { createStore, Dispatch, Store, Action } from "redux";
 import { render } from "@testing-library/react";
-import { exampleInitialState, RootState } from "./reducer";
+import { exampleInitialState, RootState } from "../reducer";
 
 type Context = ReturnType<typeof renderConnectedComponent>;
 

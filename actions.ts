@@ -44,10 +44,10 @@ export function startClock() {
   return { type: actionTypes.START_CLOCK };
 }
 
-export function tickClock(isServer: boolean) {
+export function tickClock(timestamp: number, isServer: boolean) {
   return {
     type: actionTypes.TICK_CLOCK,
     light: !isServer,
-    ts: Date.now()
+    timestamp
   };
 }
