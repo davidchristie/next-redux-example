@@ -12,5 +12,5 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Run unit tests
         run: npm test -- --coverage
-      - name: Build static assets
+      - name: Compile the application for production deployment
         run: npm run build
