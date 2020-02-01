@@ -1,8 +1,9 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { createStore, Dispatch, Store, Action } from "redux";
+import { Action, createStore } from "redux";
 import { render } from "@testing-library/react";
 import { exampleInitialState, RootState } from "../reducer";
+import { mockDispatch } from "./stores";
 
 type Context = ReturnType<typeof renderConnectedComponent>;
 
@@ -16,12 +17,6 @@ const createWrapper = (initialState: RootState) => {
     <Provider store={store}>{children}</Provider>
   );
   return { dispatch, Wrapper };
-};
-
-const mockDispatch = (store: Store): jest.Mock<Dispatch> => {
-  const dispatch = jest.fn(store.dispatch);
-  store.dispatch = dispatch;
-  return dispatch;
 };
 
 const renderConnectedComponent = (

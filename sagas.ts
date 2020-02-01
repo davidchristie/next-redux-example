@@ -1,9 +1,6 @@
-/* global fetch */
-
-import { all, call, delay, put, take, takeLatest } from "redux-saga/effects";
 import es6promise from "es6-promise";
 import "isomorphic-unfetch";
-
+import { all, call, delay, put, take, takeLatest } from "redux-saga/effects";
 import { actionTypes, failure, loadDataSuccess, tickClock } from "./actions";
 
 es6promise.polyfill();
@@ -26,11 +23,9 @@ function* loadDataSaga() {
   }
 }
 
-function* rootSaga() {
+export function* rootSaga() {
   yield all([
     call(runClockSaga),
     takeLatest(actionTypes.LOAD_DATA, loadDataSaga)
   ]);
 }
-
-export default rootSaga;
